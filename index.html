@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Typing Test</title>
+</head>
+<body>
+
+<h1>Typing Speed Test</h1>
+
+<p id="text">
+Typing is an important skill for students. Practice daily to improve speed.
+</p>
+
+<textarea id="input" placeholder="Start typing..."></textarea>
+
+<button onclick="check()">Check</button>
+
+<p id="result"></p>
+
+<script>
+function check() {
+  let text = document.getElementById("text").innerText;
+  let input = document.getElementById("input").value;
+
+  let words = input.split(" ").length;
+  let result = "Words typed: " + words;
+
+  document.getElementById("result").innerText = result;
+}
+</script>
+
+</body>
+</html>
