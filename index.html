@@ -1,33 +1,311 @@
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
-  <title>Typing Test</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Typing Speed Test Tool 2026 - TCS iON Pattern Hindi English Practice</title>
+
+  <meta name="description" content="Free online typing speed test tool for Hindi and English typing practice. Practice on TCS iON style interface with timer, WPM, accuracy and real exam pattern." />
+
+  <meta name="keywords" content="typing speed test, typing test tool, hindi typing test, english typing test, TCS iON typing interface, typing practice online, government exam typing test" />
+
+  <meta name="google-site-verification" content="tW8cRSIvyoCElL6zoJE9PeLCSVrz981avVInEs7axNo" />
+
+  <link rel="icon" href="https://typingnexus.in/favicon.ico" />
+  <link rel="canonical" href="https://surya123sankhla-lang.github.io/typing-speed-test-tool/" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #eef2f7;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0f172a;
+      color: white;
+      padding: 22px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 16px;
+      color: #cbd5e1;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 25px auto;
+      padding: 15px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .stat {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 14px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .passage {
+      background: #f9fafb;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      padding: 18px;
+      font-size: 18px;
+      margin-bottom: 15px;
+      min-height: 120px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 170px;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #94a3b8;
+      font-size: 18px;
+      resize: vertical;
+      outline: none;
+    }
+
+    textarea:focus {
+      border-color: #2563eb;
+    }
+
+    .btns {
+      margin-top: 15px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .start {
+      background: #2563eb;
+      color: white;
+    }
+
+    .reset {
+      background: #dc2626;
+      color: white;
+    }
+
+    .info-list {
+      padding-left: 20px;
+    }
+
+    footer {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 30px;
+    }
+
+    footer a {
+      color: #93c5fd;
+      margin: 0 8px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>Typing Speed Test</h1>
+  <header>
+    <h1>Typing Speed Test Tool 2026</h1>
+    <p>Free Hindi & English Typing Practice with TCS iON Style Interface</p>
+  </header>
 
-<p id="text">
-Typing is an important skill for students. Practice daily to improve speed.
-</p>
+  <main class="container">
 
-<textarea id="input" placeholder="Start typing..."></textarea>
+    <section class="card">
+      <h2>Online Typing Speed Test Practice</h2>
+      <p>
+        This typing speed test tool is designed for students preparing for government typing exams.
+        Practice Hindi and English typing with timer, WPM, accuracy and exam-style typing interface.
+      </p>
+    </section>
 
-<button onclick="check()">Check</button>
+    <section class="card">
+      <div class="stats">
+        <div class="stat">Time: <span id="time">10:00</span></div>
+        <div class="stat">WPM: <span id="wpm">0</span></div>
+        <div class="stat">Accuracy: <span id="accuracy">100%</span></div>
+        <div class="stat">Errors: <span id="errors">0</span></div>
+      </div>
 
-<p id="result"></p>
+      <div class="passage" id="passage">
+        The quick brown fox jumps over the lazy dog. This typing test is created for online typing practice. Students can improve their speed, accuracy and confidence by practicing daily on this tool.
+      </div>
 
-<script>
-function check() {
-  let text = document.getElementById("text").innerText;
-  let input = document.getElementById("input").value;
+      <textarea id="typingBox" placeholder="Start typing here..." disabled></textarea>
 
-  let words = input.split(" ").length;
-  let result = "Words typed: " + words;
+      <div class="btns">
+        <button class="start" onclick="startTest()">Start Test</button>
+        <button class="reset" onclick="resetTest()">Reset</button>
+      </div>
+    </section>
 
-  document.getElementById("result").innerText = result;
-}
-</script>
+    <section class="card">
+      <h2>TCS iON Typing Pattern Instructions</h2>
+      <ul class="info-list">
+        <li>Practice typing in real exam style interface.</li>
+        <li>Timer starts after clicking Start Test.</li>
+        <li>Typing speed is calculated in Words Per Minute.</li>
+        <li>Accuracy is calculated based on correct typed characters.</li>
+        <li>Useful for SSC CHSL, Rajasthan LDC, High Court Clerk and other typing exams.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Hindi & English Typing Practice for Government Exams</h2>
+      <p>
+        यह टाइपिंग स्पीड टेस्ट टूल सरकारी परीक्षाओं की तैयारी करने वाले छात्रों के लिए बनाया गया है।
+        यहां आप Hindi typing test, English typing test, WPM calculation और accuracy practice कर सकते हैं।
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Related Typing Exams</h2>
+      <p>
+        <a href="https://typingnexus.in" target="_blank">TypingNexus Main Website</a> |
+        <a href="https://typingnexus.in/blog" target="_blank">Typing Practice Blogs</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Typing Speed Test Tool | Powered by <a href="https://typingnexus.in">TypingNexus.in</a></p>
+  </footer>
+
+  <script>
+    const passageText = document.getElementById("passage").innerText;
+    const typingBox = document.getElementById("typingBox");
+    const timeDisplay = document.getElementById("time");
+    const wpmDisplay = document.getElementById("wpm");
+    const accuracyDisplay = document.getElementById("accuracy");
+    const errorsDisplay = document.getElementById("errors");
+
+    let timeLeft = 600;
+    let timer = null;
+    let started = false;
+
+    function startTest() {
+      if (started) return;
+      started = true;
+      typingBox.disabled = false;
+      typingBox.focus();
+
+      timer = setInterval(() => {
+        timeLeft--;
+        updateTime();
+
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          typingBox.disabled = true;
+          calculateResult();
+        }
+      }, 1000);
+    }
+
+    function updateTime() {
+      let minutes = Math.floor(timeLeft / 60);
+      let seconds = timeLeft % 60;
+      timeDisplay.innerText =
+        String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0");
+    }
+
+    typingBox.addEventListener("input", calculateResult);
+
+    function calculateResult() {
+      const typed = typingBox.value;
+      let errors = 0;
+      let correct = 0;
+
+      for (let i = 0; i < typed.length; i++) {
+        if (typed[i] === passageText[i]) {
+          correct++;
+        } else {
+          errors++;
+        }
+      }
+
+      const wordsTyped = typed.trim().split(/\s+/).filter(Boolean).length;
+      const timeUsed = (600 - timeLeft) / 60;
+      const wpm = timeUsed > 0 ? Math.round(wordsTyped / timeUsed) : 0;
+      const accuracy = typed.length > 0 ? Math.round((correct / typed.length) * 100) : 100;
+
+      wpmDisplay.innerText = wpm;
+      accuracyDisplay.innerText = accuracy + "%";
+      errorsDisplay.innerText = errors;
+    }
+
+    function resetTest() {
+      clearInterval(timer);
+      timeLeft = 600;
+      started = false;
+      typingBox.value = "";
+      typingBox.disabled = true;
+      updateTime();
+      wpmDisplay.innerText = "0";
+      accuracyDisplay.innerText = "100%";
+      errorsDisplay.innerText = "0";
+    }
+  </script>
 
 </body>
 </html>
